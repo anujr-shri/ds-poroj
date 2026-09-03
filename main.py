@@ -1,0 +1,4 @@
+from src.datascience.pipeline.data_ingestion_pipeline import DataIngestionPipeline
+
+data_ingest_stage = DataIngestionPipeline()
+data_ingest_stage.initiate_data_ingestion()
