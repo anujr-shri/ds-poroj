@@ -3,7 +3,7 @@
 # --- In config yaml we basically define directory like from where to read and where to write
 
 from src.datascience.constants import *
-from src.datascience.entity.config_entity import DataIngestionConfig, DataTransformationConfig
+from src.datascience.entity.config_entity import DataIngestionConfig, DataTransformationConfig, ModelTraningConfig
 from src.datascience.utils.common import read_yaml, make_directories
 
 # --- Global Configuration Manager ---
@@ -38,6 +38,24 @@ class ConfigurationManager:
         )
 
         return data_transfomation_config
+
+    def get_model_traning_config(self) -> ModelTraningConfig:
+        config = self.config.model_trainer
+        params = self.param.ElasticNet
+
+        make_directories([config.root_dir])
+
+        model_trainer_config = ModelTraningConfig(
+            root_dir=config.root_dir,
+            train_data_path = config.train_data_path,
+            test_data_path = config.test_data_path,
+            model_name = config.model_name,
+            alpha = params.alpha,
+            l1_ratio = params.l1_ratio,
+            target_column = "quality"
+        )
+
+        return model_trainer_config
         
 
 

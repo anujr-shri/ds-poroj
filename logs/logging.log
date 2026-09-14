@@ -64,3 +64,200 @@ x==========x]
 [2026-09-14 17:56:31,990: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
 
 x==========x]
+[2026-09-14 18:39:08,127: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2026-09-14 18:39:08,131: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-14 18:39:08,134: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-14 18:39:08,136: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-14 18:39:08,137: INFO: common: Create Directory at Path artifacts]
+[2026-09-14 18:39:08,137: INFO: common: Create Directory at Path artifacts/data_ingestion]
+[2026-09-14 18:39:08,138: INFO: data_ingestion_pipeline: Start Data Ingestion Pipeline]
+[2026-09-14 18:39:08,138: INFO: data_ingest_comp: Data File Alredy Exsist]
+[2026-09-14 18:39:08,138: INFO: data_ingestion_pipeline: Downloaded The Zip file]
+[2026-09-14 18:39:08,143: INFO: data_ingestion_pipeline: Extracted The Data from artifacts/data_ingestion to artifacts/data_ingestion/data.zip]
+[2026-09-14 18:39:08,144: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2026-09-14 18:39:08,144: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2026-09-14 18:39:08,144: INFO: data_trans_pipeline: started Data Tranformation]
+[2026-09-14 18:39:08,148: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-14 18:39:08,150: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-14 18:39:08,151: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-14 18:39:08,153: INFO: common: Create Directory at Path artifacts]
+[2026-09-14 18:39:08,154: INFO: common: Create Directory at Path artifacts/data_transformation]
+[2026-09-14 18:39:08,213: INFO: data_trans_comp: Splited data into training and test sets]
+[2026-09-14 18:39:08,214: INFO: data_trans_comp: (1279, 12)]
+[2026-09-14 18:39:08,214: INFO: data_trans_comp: (320, 12)]
+[2026-09-14 18:39:08,214: INFO: data_trans_pipeline: Ended Data Tranformation]
+[2026-09-14 18:39:08,214: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2026-09-14 18:39:08,215: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2026-09-14 18:39:08,215: INFO: model_traning_pipeline: Start The Traning]
+[2026-09-14 18:39:08,218: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-14 18:39:08,220: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-14 18:39:08,222: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-14 18:39:08,222: INFO: common: Create Directory at Path artifacts]
+[2026-09-14 18:39:08,223: ERROR: main: "'ConfigBox' object has no attribute 'elasticnet'"]
+Traceback (most recent call last):
+  File "box/box.py", line 605, in box.box.Box.__getitem__
+KeyError: 'ElasticNet'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/box.py", line 644, in box.box.Box.__getattr__
+  File "box/box.py", line 632, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'ElasticNet'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 646, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'ElasticNet'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box/box.py", line 660, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'ElasticNet'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 605, in box.box.Box.__getitem__
+KeyError: 'elasticnet'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/box.py", line 644, in box.box.Box.__getattr__
+  File "box/box.py", line 632, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'elasticnet'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 646, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'elasticnet'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Coding\Mlops\Anuj Proj\main.py", line 31, in <module>
+    data_ingestion.start_traning()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Coding\Mlops\Anuj Proj\src\datascience\pipeline\model_traning_pipeline.py", line 14, in start_traning
+    model_traning_config = config_manager.get_model_traning_config()
+  File "D:\Coding\Mlops\Anuj Proj\src\datascience\config\configuration.py", line 44, in get_model_traning_config
+    params = self.config.ElasticNet
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "box/config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box/box.py", line 660, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'elasticnet'"
+[2026-09-14 18:39:40,986: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2026-09-14 18:39:40,989: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-14 18:39:40,991: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-14 18:39:40,991: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-14 18:39:40,992: INFO: common: Create Directory at Path artifacts]
+[2026-09-14 18:39:40,993: INFO: common: Create Directory at Path artifacts/data_ingestion]
+[2026-09-14 18:39:40,993: INFO: data_ingestion_pipeline: Start Data Ingestion Pipeline]
+[2026-09-14 18:39:40,994: INFO: data_ingest_comp: Data File Alredy Exsist]
+[2026-09-14 18:39:40,994: INFO: data_ingestion_pipeline: Downloaded The Zip file]
+[2026-09-14 18:39:41,003: INFO: data_ingestion_pipeline: Extracted The Data from artifacts/data_ingestion to artifacts/data_ingestion/data.zip]
+[2026-09-14 18:39:41,003: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2026-09-14 18:39:41,003: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2026-09-14 18:39:41,004: INFO: data_trans_pipeline: started Data Tranformation]
+[2026-09-14 18:39:41,008: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-14 18:39:41,009: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-14 18:39:41,011: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-14 18:39:41,012: INFO: common: Create Directory at Path artifacts]
+[2026-09-14 18:39:41,057: INFO: common: Create Directory at Path artifacts/data_transformation]
+[2026-09-14 18:39:41,122: INFO: data_trans_comp: Splited data into training and test sets]
+[2026-09-14 18:39:41,122: INFO: data_trans_comp: (1279, 12)]
+[2026-09-14 18:39:41,122: INFO: data_trans_comp: (320, 12)]
+[2026-09-14 18:39:41,123: INFO: data_trans_pipeline: Ended Data Tranformation]
+[2026-09-14 18:39:41,123: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2026-09-14 18:39:41,123: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2026-09-14 18:39:41,123: INFO: model_traning_pipeline: Start The Traning]
+[2026-09-14 18:39:41,126: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-14 18:39:41,128: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-14 18:39:41,129: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-14 18:39:41,130: INFO: common: Create Directory at Path artifacts]
+[2026-09-14 18:39:41,131: INFO: common: Create Directory at Path artifacts/model_trainer]
+[2026-09-14 18:39:41,131: ERROR: main: [Errno 2] No such file or directory: 'artifacts/data_transformation/train.csv']
+Traceback (most recent call last):
+  File "D:\Coding\Mlops\Anuj Proj\main.py", line 31, in <module>
+    data_ingestion.start_traning()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Coding\Mlops\Anuj Proj\src\datascience\pipeline\model_traning_pipeline.py", line 16, in start_traning
+    model_traning_comp.train_the_model()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Coding\Mlops\Anuj Proj\src\datascience\components\model_tarning_comp.py", line 13, in train_the_model
+    train_data = pd.read_csv(self.config.train_data_path)
+  File "D:\Python Dev\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "D:\Python Dev\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "D:\Python Dev\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "D:\Python Dev\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ~~~~~~~~~~^
+        f,
+        ^^
+    ...<6 lines>...
+        storage_options=self.options.get("storage_options", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Python Dev\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/data_transformation/train.csv'
+[2026-09-14 18:40:26,193: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2026-09-14 18:40:26,196: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-14 18:40:26,197: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-14 18:40:26,199: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-14 18:40:26,200: INFO: common: Create Directory at Path artifacts]
+[2026-09-14 18:40:26,201: INFO: common: Create Directory at Path artifacts/data_ingestion]
+[2026-09-14 18:40:26,201: INFO: data_ingestion_pipeline: Start Data Ingestion Pipeline]
+[2026-09-14 18:40:26,202: INFO: data_ingest_comp: Data File Alredy Exsist]
+[2026-09-14 18:40:26,202: INFO: data_ingestion_pipeline: Downloaded The Zip file]
+[2026-09-14 18:40:26,207: INFO: data_ingestion_pipeline: Extracted The Data from artifacts/data_ingestion to artifacts/data_ingestion/data.zip]
+[2026-09-14 18:40:26,207: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2026-09-14 18:40:26,208: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2026-09-14 18:40:26,208: INFO: data_trans_pipeline: started Data Tranformation]
+[2026-09-14 18:40:26,213: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-14 18:40:26,215: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-14 18:40:26,216: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-14 18:40:26,217: INFO: common: Create Directory at Path artifacts]
+[2026-09-14 18:40:26,218: INFO: common: Create Directory at Path artifacts/data_transformation]
+[2026-09-14 18:40:26,262: INFO: data_trans_comp: Splited data into training and test sets]
+[2026-09-14 18:40:26,263: INFO: data_trans_comp: (1279, 12)]
+[2026-09-14 18:40:26,263: INFO: data_trans_comp: (320, 12)]
+[2026-09-14 18:40:26,263: INFO: data_trans_pipeline: Ended Data Tranformation]
+[2026-09-14 18:40:26,264: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2026-09-14 18:40:26,264: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2026-09-14 18:40:26,264: INFO: model_traning_pipeline: Start The Traning]
+[2026-09-14 18:40:26,267: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-14 18:40:26,268: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-14 18:40:26,270: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-14 18:40:26,270: INFO: common: Create Directory at Path artifacts]
+[2026-09-14 18:40:26,271: INFO: common: Create Directory at Path artifacts/model_trainer]
+[2026-09-14 18:40:26,314: INFO: model_traning_pipeline: Tranning Completed]
+[2026-09-14 18:40:26,315: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
