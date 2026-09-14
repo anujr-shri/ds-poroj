@@ -3,7 +3,7 @@
 # --- In config yaml we basically define directory like from where to read and where to write
 
 from src.datascience.constants import *
-from src.datascience.entity.config_entity import DataIngestionConfig
+from src.datascience.entity.config_entity import DataIngestionConfig, DataTransformationConfig
 from src.datascience.utils.common import read_yaml, make_directories
 
 # --- Global Configuration Manager ---
@@ -28,6 +28,17 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config_obj
+
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        data_trans_config = self.config.data_transformation
+        make_directories([data_trans_config.root_dir])
+
+        data_transfomation_config = DataTransformationConfig(
+            **data_trans_config
+        )
+
+        return data_transfomation_config
+        
 
 
 

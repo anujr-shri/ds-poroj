@@ -7,3 +7,11 @@ class DataIngestionConfig:
     source_URL: str
     local_data_file: str
     unzip_dir: Path
+
+@dataclass
+class DataTransformationConfig:
+    root_dir: Path
+    data_path: str
+
+
+
