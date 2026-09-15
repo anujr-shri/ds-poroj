@@ -261,3 +261,328 @@ x==========x]
 [2026-09-14 18:40:26,315: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
 
 x==========x]
+[2026-09-15 13:25:10,601: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2026-09-15 13:25:10,605: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:25:10,621: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:25:10,625: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:25:10,626: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:25:10,630: INFO: common: Create Directory at Path artifacts/data_ingestion]
+[2026-09-15 13:25:10,632: INFO: data_ingestion_pipeline: Start Data Ingestion Pipeline]
+[2026-09-15 13:25:10,633: INFO: data_ingest_comp: Data File Alredy Exsist]
+[2026-09-15 13:25:10,633: INFO: data_ingestion_pipeline: Downloaded The Zip file]
+[2026-09-15 13:25:10,656: INFO: data_ingestion_pipeline: Extracted The Data from artifacts/data_ingestion to artifacts/data_ingestion/data.zip]
+[2026-09-15 13:25:10,659: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2026-09-15 13:25:10,659: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2026-09-15 13:25:10,660: INFO: data_trans_pipeline: started Data Tranformation]
+[2026-09-15 13:25:10,663: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:25:10,664: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:25:10,666: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:25:10,667: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:25:10,667: INFO: common: Create Directory at Path artifacts/data_transformation]
+[2026-09-15 13:25:10,761: INFO: data_trans_comp: Splited data into training and test sets]
+[2026-09-15 13:25:10,762: INFO: data_trans_comp: (1279, 12)]
+[2026-09-15 13:25:10,762: INFO: data_trans_comp: (320, 12)]
+[2026-09-15 13:25:10,763: INFO: data_trans_pipeline: Ended Data Tranformation]
+[2026-09-15 13:25:10,763: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2026-09-15 13:25:10,763: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2026-09-15 13:25:10,763: INFO: model_traning_pipeline: Start The Traning]
+[2026-09-15 13:25:10,766: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:25:10,768: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:25:10,770: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:25:10,771: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:25:10,771: INFO: common: Create Directory at Path artifacts/model_trainer]
+[2026-09-15 13:25:10,818: INFO: model_traning_pipeline: Tranning Completed]
+[2026-09-15 13:25:10,818: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2026-09-15 13:25:10,818: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2026-09-15 13:25:10,821: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:25:10,823: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:25:10,824: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:25:10,825: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:25:10,825: ERROR: main: "'ConfigBox' object has no attribute 'model_evalution'"]
+Traceback (most recent call last):
+  File "box/box.py", line 605, in box.box.Box.__getitem__
+KeyError: 'model_evalution'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/box.py", line 644, in box.box.Box.__getattr__
+  File "box/box.py", line 632, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'model_evalution'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 646, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'model_evalution'. Did you mean: 'model_evaluation'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box/box.py", line 660, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'model_evalution'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 605, in box.box.Box.__getitem__
+KeyError: 'model_evalution'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/box.py", line 644, in box.box.Box.__getattr__
+  File "box/box.py", line 632, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'model_evalution'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 646, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'model_evalution'. Did you mean: 'model_evaluation'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Coding\Mlops\Anuj Proj\main.py", line 43, in <module>
+    data_ingestion.run_model_eval()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Coding\Mlops\Anuj Proj\src\datascience\pipeline\model_evalution_pipeline.py", line 14, in run_model_eval
+    model_eval_config = config_manager.get_model_evlaution_config()
+  File "D:\Coding\Mlops\Anuj Proj\src\datascience\config\configuration.py", line 65, in get_model_evlaution_config
+    config = self.config.model_evalution
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "box/config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box/box.py", line 660, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'model_evalution'". Did you mean: 'model_evaluation'?
+[2026-09-15 13:26:05,535: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2026-09-15 13:26:05,540: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:26:05,541: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:26:05,542: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:26:05,544: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:26:05,545: INFO: common: Create Directory at Path artifacts/data_ingestion]
+[2026-09-15 13:26:05,545: INFO: data_ingestion_pipeline: Start Data Ingestion Pipeline]
+[2026-09-15 13:26:05,545: INFO: data_ingest_comp: Data File Alredy Exsist]
+[2026-09-15 13:26:05,546: INFO: data_ingestion_pipeline: Downloaded The Zip file]
+[2026-09-15 13:26:05,551: INFO: data_ingestion_pipeline: Extracted The Data from artifacts/data_ingestion to artifacts/data_ingestion/data.zip]
+[2026-09-15 13:26:05,554: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2026-09-15 13:26:05,557: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2026-09-15 13:26:05,557: INFO: data_trans_pipeline: started Data Tranformation]
+[2026-09-15 13:26:05,562: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:26:05,564: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:26:05,565: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:26:05,566: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:26:05,567: INFO: common: Create Directory at Path artifacts/data_transformation]
+[2026-09-15 13:26:05,617: INFO: data_trans_comp: Splited data into training and test sets]
+[2026-09-15 13:26:05,617: INFO: data_trans_comp: (1279, 12)]
+[2026-09-15 13:26:05,618: INFO: data_trans_comp: (320, 12)]
+[2026-09-15 13:26:05,618: INFO: data_trans_pipeline: Ended Data Tranformation]
+[2026-09-15 13:26:05,619: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2026-09-15 13:26:05,619: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2026-09-15 13:26:05,620: INFO: model_traning_pipeline: Start The Traning]
+[2026-09-15 13:26:05,623: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:26:05,624: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:26:05,626: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:26:05,626: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:26:05,627: INFO: common: Create Directory at Path artifacts/model_trainer]
+[2026-09-15 13:26:05,671: INFO: model_traning_pipeline: Tranning Completed]
+[2026-09-15 13:26:05,672: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2026-09-15 13:26:05,672: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2026-09-15 13:26:05,675: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:26:05,676: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:26:05,677: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:26:05,678: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:26:05,678: INFO: common: Create Directory at Path artifacts/model_evaluation]
+[2026-09-15 13:26:05,679: INFO: model_evalution_pipeline: Model Evalution Started]
+[2026-09-15 13:26:09,480: ERROR: main: API request to endpoint /api/2.0/mlflow/runs/create failed with error code 403 != 200. Response body: '']
+Traceback (most recent call last):
+  File "D:\Coding\Mlops\Anuj Proj\main.py", line 43, in <module>
+    data_ingestion.run_model_eval()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Coding\Mlops\Anuj Proj\src\datascience\pipeline\model_evalution_pipeline.py", line 17, in run_model_eval
+    model_evlaution.log_into_mlflow()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Coding\Mlops\Anuj Proj\src\datascience\components\model_eval_comp.py", line 42, in log_into_mlflow
+    with mlflow.start_run():
+         ~~~~~~~~~~~~~~~~^^
+  File "D:\Python Dev\Lib\site-packages\mlflow\tracking\fluent.py", line 657, in start_run
+    active_run_obj = client.create_run(
+        experiment_id=exp_id_for_run,
+        tags=resolved_tags,
+        run_name=run_name,
+    )
+  File "D:\Python Dev\Lib\site-packages\mlflow\tracking\client.py", line 627, in create_run
+    return self._tracking_client.create_run(experiment_id, start_time, tags, run_name)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python Dev\Lib\site-packages\mlflow\telemetry\track.py", line 30, in wrapper
+    result = func(*args, **kwargs)
+  File "D:\Python Dev\Lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 185, in create_run
+    return self.store.create_run(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        experiment_id=experiment_id,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        run_name=run_name,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Python Dev\Lib\site-packages\mlflow\store\tracking\rest_store.py", line 403, in create_run
+    response_proto = self._call_endpoint(CreateRun, req_body)
+  File "D:\Python Dev\Lib\site-packages\mlflow\store\tracking\rest_store.py", line 266, in _call_endpoint
+    return call_endpoint(
+        self.get_host_creds(),
+    ...<4 lines>...
+        retry_timeout_seconds=retry_timeout_seconds,
+    )
+  File "D:\Python Dev\Lib\site-packages\mlflow\utils\rest_utils.py", line 672, in call_endpoint
+    response = verify_rest_response(
+        response,
+        endpoint,
+        expected_status=expected_status,
+    )
+  File "D:\Python Dev\Lib\site-packages\mlflow\utils\rest_utils.py", line 388, in verify_rest_response
+    raise MlflowException(
+    ...<4 lines>...
+    )
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/runs/create failed with error code 403 != 200. Response body: ''
+[2026-09-15 13:28:34,204: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2026-09-15 13:28:34,210: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:28:34,212: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:28:34,213: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:28:34,214: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:28:34,215: INFO: common: Create Directory at Path artifacts/data_ingestion]
+[2026-09-15 13:28:34,216: INFO: data_ingestion_pipeline: Start Data Ingestion Pipeline]
+[2026-09-15 13:28:34,216: INFO: data_ingest_comp: Data File Alredy Exsist]
+[2026-09-15 13:28:34,216: INFO: data_ingestion_pipeline: Downloaded The Zip file]
+[2026-09-15 13:28:34,221: INFO: data_ingestion_pipeline: Extracted The Data from artifacts/data_ingestion to artifacts/data_ingestion/data.zip]
+[2026-09-15 13:28:34,222: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2026-09-15 13:28:34,223: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2026-09-15 13:28:34,224: INFO: data_trans_pipeline: started Data Tranformation]
+[2026-09-15 13:28:34,229: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:28:34,231: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:28:34,232: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:28:34,233: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:28:34,233: INFO: common: Create Directory at Path artifacts/data_transformation]
+[2026-09-15 13:28:34,286: INFO: data_trans_comp: Splited data into training and test sets]
+[2026-09-15 13:28:34,286: INFO: data_trans_comp: (1279, 12)]
+[2026-09-15 13:28:34,286: INFO: data_trans_comp: (320, 12)]
+[2026-09-15 13:28:34,287: INFO: data_trans_pipeline: Ended Data Tranformation]
+[2026-09-15 13:28:34,287: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2026-09-15 13:28:34,288: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2026-09-15 13:28:34,288: INFO: model_traning_pipeline: Start The Traning]
+[2026-09-15 13:28:34,291: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:28:34,293: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:28:34,294: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:28:34,294: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:28:34,295: INFO: common: Create Directory at Path artifacts/model_trainer]
+[2026-09-15 13:28:34,388: INFO: model_traning_pipeline: Tranning Completed]
+[2026-09-15 13:28:34,389: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2026-09-15 13:28:34,389: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2026-09-15 13:28:34,392: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:28:34,394: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:28:34,396: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:28:34,397: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:28:34,398: INFO: common: Create Directory at Path artifacts/model_evaluation]
+[2026-09-15 13:28:34,398: INFO: model_evalution_pipeline: Model Evalution Started]
+[2026-09-15 13:28:37,962: INFO: model_eval_comp: Logging the info]
+[2026-09-15 13:28:38,955: ERROR: main: "['quality'] not found in axis"]
+Traceback (most recent call last):
+  File "D:\Coding\Mlops\Anuj Proj\main.py", line 43, in <module>
+    data_ingestion.run_model_eval()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Coding\Mlops\Anuj Proj\src\datascience\pipeline\model_evalution_pipeline.py", line 17, in run_model_eval
+    model_evlaution.log_into_mlflow()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Coding\Mlops\Anuj Proj\src\datascience\components\model_eval_comp.py", line 44, in log_into_mlflow
+    (mae, mse, r2) = self.evalution_param(test_data, model)
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\Coding\Mlops\Anuj Proj\src\datascience\components\model_eval_comp.py", line 21, in evalution_param
+    x_test = test_data.drop([self.config.target_col])
+  File "D:\Python Dev\Lib\site-packages\pandas\core\frame.py", line 5588, in drop
+    return super().drop(
+           ~~~~~~~~~~~~^
+        labels=labels,
+        ^^^^^^^^^^^^^^
+    ...<5 lines>...
+        errors=errors,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Python Dev\Lib\site-packages\pandas\core\generic.py", line 4807, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "D:\Python Dev\Lib\site-packages\pandas\core\generic.py", line 4849, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "D:\Python Dev\Lib\site-packages\pandas\core\indexes\base.py", line 7136, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['quality'] not found in axis"
+[2026-09-15 13:29:33,444: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2026-09-15 13:29:33,448: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:29:33,449: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:29:33,450: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:29:33,451: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:29:33,452: INFO: common: Create Directory at Path artifacts/data_ingestion]
+[2026-09-15 13:29:33,452: INFO: data_ingestion_pipeline: Start Data Ingestion Pipeline]
+[2026-09-15 13:29:33,453: INFO: data_ingest_comp: Data File Alredy Exsist]
+[2026-09-15 13:29:33,453: INFO: data_ingestion_pipeline: Downloaded The Zip file]
+[2026-09-15 13:29:33,458: INFO: data_ingestion_pipeline: Extracted The Data from artifacts/data_ingestion to artifacts/data_ingestion/data.zip]
+[2026-09-15 13:29:33,458: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2026-09-15 13:29:33,458: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2026-09-15 13:29:33,459: INFO: data_trans_pipeline: started Data Tranformation]
+[2026-09-15 13:29:33,465: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:29:33,466: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:29:33,468: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:29:33,469: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:29:33,470: INFO: common: Create Directory at Path artifacts/data_transformation]
+[2026-09-15 13:29:33,517: INFO: data_trans_comp: Splited data into training and test sets]
+[2026-09-15 13:29:33,518: INFO: data_trans_comp: (1279, 12)]
+[2026-09-15 13:29:33,518: INFO: data_trans_comp: (320, 12)]
+[2026-09-15 13:29:33,519: INFO: data_trans_pipeline: Ended Data Tranformation]
+[2026-09-15 13:29:33,519: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2026-09-15 13:29:33,519: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2026-09-15 13:29:33,520: INFO: model_traning_pipeline: Start The Traning]
+[2026-09-15 13:29:33,523: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:29:33,525: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:29:33,526: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:29:33,527: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:29:33,527: INFO: common: Create Directory at Path artifacts/model_trainer]
+[2026-09-15 13:29:33,568: INFO: model_traning_pipeline: Tranning Completed]
+[2026-09-15 13:29:33,569: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2026-09-15 13:29:33,569: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2026-09-15 13:29:33,572: INFO: common: Loaded The yaml file from config\config.yaml]
+[2026-09-15 13:29:33,574: INFO: common: Loaded The yaml file from schema.yaml]
+[2026-09-15 13:29:33,574: INFO: common: Loaded The yaml file from params.yaml]
+[2026-09-15 13:29:33,575: INFO: common: Create Directory at Path artifacts]
+[2026-09-15 13:29:33,576: INFO: common: Create Directory at Path artifacts/model_evaluation]
+[2026-09-15 13:29:33,576: INFO: model_evalution_pipeline: Model Evalution Started]
+[2026-09-15 13:29:36,717: INFO: model_eval_comp: Logging the info]
+[2026-09-15 13:29:36,729: INFO: model_eval_comp: Caluclated Metrics]
+[2026-09-15 13:30:31,650: INFO: model_evalution_pipeline: Model Eval Completed]
+[2026-09-15 13:30:31,650: INFO: model_evalution_pipeline: All The info is being tracked in https://dagshub.com/anujr-shri/ds-poroj.mlflow]
+[2026-09-15 13:30:31,651: INFO: main: >>>>>> stage Model evaluation stage completed <<<<<<
+
+x==========x]

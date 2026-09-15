@@ -24,4 +24,16 @@ class ModelTraningConfig:
     target_column: str
 
 
+@dataclass
+class ModelEvalutionConfig:
+    root_dir: Path
+    test_data_path: Path
+    model_path: Path
+    metric_file_name: Path
+    aplha: float
+    l1_ratio: float
+    target_col: str
+    mlflow_uri: str
+
+
 

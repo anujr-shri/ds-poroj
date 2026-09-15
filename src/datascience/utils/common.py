@@ -47,3 +47,5 @@ def make_directories(direactories_path: list, verbose=True):
         if verbose:
             logger.info(f"Create Directory at Path {paths}")
 
+
+
